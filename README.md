@@ -1,4 +1,4 @@
-bennys-utilities
+Benny's Utilities
 ================
 
-JavaScript Utilities from Benny Neugebauer
+JavaScript Utilities from Benny Neugebauer.
