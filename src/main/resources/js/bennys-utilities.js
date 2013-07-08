@@ -26,5 +26,26 @@ BENNYS.Utilities = {
   isHexColorCode: function(string) {
     var regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g;
     return regex.test(string);
+  },
+  createNameSpace: function(name) {
+    if (typeof name !== 'string')
+      return undefined;
+
+    var parent = window;
+    var parts = name.split('.');
+
+    if (parts[0] === 'window') {
+      parts = parts.slice(1);
+    }
+
+    for (var i = 0; i < parts.length; i += 1) {
+      if (typeof parent[parts[i]] === 'undefined') {
+        parent[parts[i]] = {};
+      }
+
+      parent = parent[parts[i]];
+    }
+    
+    return parent;
   }
 };

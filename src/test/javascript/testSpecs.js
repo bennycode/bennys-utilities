@@ -113,17 +113,33 @@ describe('BENNYS.Utilities.isHexColorCode', function() {
     var actual = BENNYS.Utilities.isHexColorCode('#FF0000');
     expect(expected).toBe(actual);
   });
-  
+
   it('does not accept hex color codes without hash sign', function() {
     var expected = false;
     var actual = BENNYS.Utilities.isHexColorCode('FF0000');
     expect(expected).toBe(actual);
-  });      
-  
+  });
+
   it('does not accept color names', function() {
     var expected = false;
     var actual = BENNYS.Utilities.isHexColorCode('red');
     expect(expected).toBe(actual);
-  });  
-  
+  });
+
+});
+
+describe('BENNYS.Utilities.createNameSpace', function() {
+
+  it('creates objects out of strings', function() {
+    var expected = 'object';
+    var actual = typeof BENNYS.Utilities.createNameSpace('de.bennyn.javascript.package');
+    expect(expected).toBe(actual);
+  });
+
+  it('needs a string in order to work properly', function() {
+    var expected = 'undefined';
+    var actual = typeof BENNYS.Utilities.createNameSpace(1337);
+    expect(expected).toBe(actual);
+  });
+
 });
