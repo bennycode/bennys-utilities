@@ -1,5 +1,4 @@
 var BENNYS = {};
-
 BENNYS.Utilities = {
   /**
    * Splits a given string into an object hierarchy.
@@ -10,10 +9,8 @@ BENNYS.Utilities = {
   createNameSpace: function(name) {
     if (typeof name !== 'string')
       return undefined;
-
     var parent = window;
     var parts = name.split('.');
-
     if (parts[0] === 'window') {
       parts = parts.slice(1);
     }
@@ -36,7 +33,6 @@ BENNYS.Utilities = {
    */
   getFileExtension: function(filePath) {
     var extension = '';
-
     if (typeof filePath === 'string') {
       extension = filePath.substr((~-filePath.lastIndexOf('.') >>> 0) + 2);
     }
@@ -74,6 +70,16 @@ BENNYS.Utilities = {
   isHexColorCode: function(string) {
     var regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g;
     return regex.test(string);
+  },
+  /**
+   * Checks if a browser is a Microsoft Internet Explorer (MSIE).
+   * Guaranteed to work with IE8, IE9 and IE10.
+   * 
+   * @returns {boolean} True, when the browser is an Internet Explorer.
+   */
+  isMSIE: function() {
+    var isMSIE = /*@cc_on!@*/0 ? true : false;
+    return isMSIE;
   },
   /**
    * Returns "Hello World" to test Benny's Utilities.

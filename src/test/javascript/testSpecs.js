@@ -143,3 +143,14 @@ describe('BENNYS.Utilities.createNameSpace', function() {
   });
 
 });
+
+describe('BENNYS.Utilities.isMSIE', function() {
+
+  // NOTE: This test depends on the Jasmine render engine.
+  it('is true only in Internet Explorer', function() {
+    var expected = false;
+    var actual = BENNYS.Utilities.isMSIE();
+    expect(expected).toBe(actual);
+  });
+
+});
