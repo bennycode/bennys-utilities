@@ -55,9 +55,8 @@
           </specIncludes>
         </configuration>
       </plugin>
-      <!-- Maven Minify Plugin -->
-      <!-- https://github.com/samaxes/minify-maven-plugin -->
-      <!--
+      <!-- Maven Minify Plugin: https://github.com/samaxes/minify-maven-plugin -->
+      <!-- Configuration: http://samaxes.github.io/minify-maven-plugin/minify-mojo.html -->
       <plugin>
         <groupId>com.samaxes.maven</groupId>
         <artifactId>maven-minify-plugin</artifactId>
@@ -66,12 +65,14 @@
           <execution>
             <id>default-minify</id>
             <phase>process-resources</phase>
-            <configuration>
-              <cssSourceFiles></cssSourceFiles>
+            <configuration>              
               <jsSourceFiles>
-                <jsSourceDir>src/main/resources/js</jsSourceDir>
                 <jsSourceFile>bennys-utilities.js</jsSourceFile>
               </jsSourceFiles>
+              <!-- Output: target/js/bennys-utilities.min.js -->
+              <webappSourceDir>${basedir}/src/main/resources</webappSourceDir>
+              <webappTargetDir>${project.build.directory}</webappTargetDir>
+              <jsFinalFile>bennys-utilities.js</jsFinalFile>
             </configuration>
             <goals>
               <goal>minify</goal>
@@ -79,7 +80,7 @@
           </execution>
         </executions>
       </plugin>
-      -->
+      
     </plugins>
   </build>
 </project>
