@@ -1,4 +1,5 @@
 var BENNYS = {};
+
 BENNYS.Utilities = {
   /**
    * Splits a given string into an object hierarchy.
@@ -87,5 +88,74 @@ BENNYS.Utilities = {
    */
   test: function() {
     return 'Hello World';
+  }
+};
+
+BENNYS.Utilities.Mobile = {
+  /**
+   * Returns the family name of a mobile device.
+   * Examples: "iOS", "Android", "Kindle"
+   * 
+   * @see http://amazonsilk.wordpress.com/useful-bits/silk-user-agent/
+   * @see http://html5-mobile.de/blog/wichtigsten-user-agents-mobile-devices-jquery-mobile
+   * @param {type} _ua User Agent
+   * @returns {String} Device family name (ex. "iOS")
+   */
+  getDeviceFamily: function(_ua) {
+
+    var ua = _ua || navigator.userAgent;
+
+    var family = 'unknown';
+
+    if (/(iPhone|iPod|iPad)/.test(ua))
+      family = 'iOS';
+    else if (/Silk/.test(ua))
+      family = 'Kindle';
+    else if (/Android/.test(ua))
+      family = 'Android';
+
+    return family;
+
+  },
+  /**
+   * Returns the device name.
+   * Examples: "iPad", "Nexus 7", "Sony Tablet S"
+   * 
+   * @see http://stackoverflow.com/questions/17659845/regex-match-android-device-name-with-javascript
+   * @see http://dmolsen.com/2012/01/30/introducing-ua-parser-php-slicing-dicing-user-agent-strings/
+   * @param {type} _ua User agent
+   * @returns {String} Device name
+   */
+  getDeviceName: function(_ua) {
+
+    var ua = _ua || navigator.userAgent;
+
+    var name = 'unknown';
+
+    // Detect iOS name
+    var matches = ua.match(/(iPhone|iPod|iPad)/);
+
+    // TODO: Write functions instead of if... else... if...
+    if (matches) {
+      name = matches[0];
+    } else {
+
+      // Detect Android or Kindle name
+      matches = (/;\s*([^;]+)\s+Build\//g).exec(ua);
+
+      if (matches) {
+        name = matches[1];
+      } else {
+
+        // Silk
+        if ((/Silk/.test(ua))) {
+          name = 'Silk';
+        }
+
+      }
+
+    }
+
+    return name;
   }
 };

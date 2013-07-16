@@ -154,3 +154,48 @@ describe('BENNYS.Utilities.isMSIE', function() {
   });
 
 });
+
+describe('BENNYS.Utilities.Mobile.getDeviceFamily', function() {
+  
+  it('cannot detect desktop devices', function() {
+    var userAgent = '';
+
+    var expected = 'unknown';
+    var actual = BENNYS.Utilities.Mobile.getDeviceFamily(userAgent);
+
+    expect(expected).toBe(actual);
+  });  
+
+  it('detects Kindle Fire HD (Mobile view)', function() {
+    var userAgent = 'Mozilla/5.0 (Linux; U; de-de; KFTT Build/IML74K) AppleWebKit/535.19 (KHTML, like  Gecko) Silk/3.1 Safari/535.19 Silk-Accelerated=false';
+
+    var expected = 'Kindle';
+    var actual = BENNYS.Utilities.Mobile.getDeviceFamily(userAgent);
+
+    expect(expected).toBe(actual);
+  });
+
+});
+
+describe('BENNYS.Utilities.Mobile.getDeviceName', function() {
+  
+  it('cannot detect desktop devices', function() {
+    var userAgent = '';
+
+    var expected = 'unknown';
+    var actual = BENNYS.Utilities.Mobile.getDeviceName(userAgent);
+
+    expect(expected).toBe(actual);
+  });    
+
+  it('detects Kindle Fire HD (Mobile view)', function() {
+    var userAgent = 'Mozilla/5.0 (Linux; U; de-de; KFTT Build/IML74K) AppleWebKit/535.19 (KHTML, like  Gecko) Silk/3.1 Safari/535.19 Silk-Accelerated=false';
+
+    var expected = 'KFTT';
+    var actual = BENNYS.Utilities.Mobile.getDeviceName(userAgent);
+
+    expect(expected).toBe(actual);
+  });
+
+
+});
