@@ -202,10 +202,22 @@ describe('BENNYS.Utilities.Mobile.getDeviceName', function() {
 
 describe('BENNYS.Utilities.CSS.getDimension', function() {
 
-  it('can calcute the CSS dimension for different device pixel ratios', function() {
+  it('can calcute the CSS dimension needed for different device pixel ratios', function() {
     var expected = '{"width":1024,"height":768}';
     var imageWidth = 2048, imageHeight = 1536, pixelRatio = 2;
     var actual = BENNYS.Utilities.CSS.getDimension(imageWidth, imageHeight, pixelRatio);
+
+    expect(expected).toBe(JSON.stringify(actual));
+  });
+
+});
+
+describe('BENNYS.Utilities.CSS.getScaledDimension', function() {
+
+  it('can calcute the image dimension needed to make it look sharp on a different display', function() {
+    var expected = '{"width":1920,"height":1080}';
+    var imageWidth = 1280, imageHeight = 720, designWidth = 1280, designHeight = 720, screenWidth = 1920, screenHeight = 1080;
+    var actual = BENNYS.Utilities.CSS.getScaledDimension(imageWidth, imageHeight, designWidth, designHeight, screenWidth, screenHeight);
 
     expect(expected).toBe(JSON.stringify(actual));
   });

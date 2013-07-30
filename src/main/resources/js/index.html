@@ -11,8 +11,8 @@
             var imageHeight = 768;
             var pixelRatio = 2;
 
-            var imageWidth = 2048, imageHeight = 1536, pixelRatio = 2;
-            var value = BENNYS.Utilities.CSS.getDimension(imageWidth, imageHeight, pixelRatio);
+            var imageWidth = 1280, imageHeight = 720, designWidth = 1280, designHeight = 720, screenWidth = 1920, screenHeight = 1080;
+            var value = BENNYS.Utilities.CSS.getScaledDimension(imageWidth, imageHeight, designWidth, designHeight, screenWidth, screenHeight);
             var test1 = JSON.stringify(value);
             var test2 = '{"width":null,"height":null}';
 
