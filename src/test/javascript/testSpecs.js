@@ -156,7 +156,7 @@ describe('BENNYS.Utilities.isMSIE', function() {
 });
 
 describe('BENNYS.Utilities.Mobile.getDeviceFamily', function() {
-  
+
   it('cannot detect desktop devices', function() {
     var userAgent = '';
 
@@ -164,7 +164,7 @@ describe('BENNYS.Utilities.Mobile.getDeviceFamily', function() {
     var actual = BENNYS.Utilities.Mobile.getDeviceFamily(userAgent);
 
     expect(expected).toBe(actual);
-  });  
+  });
 
   it('detects Kindle Fire HD (Mobile view)', function() {
     var userAgent = 'Mozilla/5.0 (Linux; U; de-de; KFTT Build/IML74K) AppleWebKit/535.19 (KHTML, like  Gecko) Silk/3.1 Safari/535.19 Silk-Accelerated=false';
@@ -178,7 +178,7 @@ describe('BENNYS.Utilities.Mobile.getDeviceFamily', function() {
 });
 
 describe('BENNYS.Utilities.Mobile.getDeviceName', function() {
-  
+
   it('cannot detect desktop devices', function() {
     var userAgent = '';
 
@@ -186,7 +186,7 @@ describe('BENNYS.Utilities.Mobile.getDeviceName', function() {
     var actual = BENNYS.Utilities.Mobile.getDeviceName(userAgent);
 
     expect(expected).toBe(actual);
-  });    
+  });
 
   it('detects Kindle Fire HD (Mobile view)', function() {
     var userAgent = 'Mozilla/5.0 (Linux; U; de-de; KFTT Build/IML74K) AppleWebKit/535.19 (KHTML, like  Gecko) Silk/3.1 Safari/535.19 Silk-Accelerated=false';
@@ -197,5 +197,17 @@ describe('BENNYS.Utilities.Mobile.getDeviceName', function() {
     expect(expected).toBe(actual);
   });
 
+
+});
+
+describe('BENNYS.Utilities.CSS.getDimension', function() {
+
+  it('can calcute the CSS dimension for different device pixel ratios', function() {
+    var expected = '{"width":1024,"height":768}';
+    var imageWidth = 2048, imageHeight = 1536, pixelRatio = 2;
+    var actual = BENNYS.Utilities.CSS.getDimension(imageWidth, imageHeight, pixelRatio);
+
+    expect(expected).toBe(JSON.stringify(actual));
+  });
 
 });

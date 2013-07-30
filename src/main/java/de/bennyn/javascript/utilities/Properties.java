@@ -5,10 +5,15 @@ import java.net.URL;
 
 public class Properties {
 
-    public String getPath(String relativePath) {
+    /**
+     * 
+     * @param relativePath Example: "js/index.html"
+     * @return Example: "/opt/workspace/bneu/bennys-utilities/target/classes/js/index.html"
+     */
+    public String getCompiledPath(String relativePath) {
         URL resource = getClass().getClassLoader().getResource(relativePath);
         File file = new File(resource.getFile());
-        
+
         return file.getAbsolutePath();
     }
 }
