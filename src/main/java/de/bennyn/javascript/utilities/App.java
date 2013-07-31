@@ -10,7 +10,7 @@ public class App {
         Properties properties = new Properties();
         
         String relativePath = "js/index.html";
-        String url = properties.getCompiledPath(relativePath);
+        String url = properties.getSourcePath(relativePath);
 
         if (Desktop.isDesktopSupported()) {
             // Windows

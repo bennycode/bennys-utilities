@@ -100,6 +100,10 @@ BENNYS.Utilities.CSS = {
    * @returns {object}
    */
   getDimension: function(imageWidth, imageHeight, pixelRatio) {
+    if (typeof pixelRatio === 'undefined') {
+      pixelRatio = window.devicePixelRatio;
+    }
+
     var cssWidth = imageWidth / pixelRatio;
     var cssHeight = imageHeight / pixelRatio;
 

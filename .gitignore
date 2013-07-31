@@ -7,3 +7,5 @@
 /target/
 /bennys-utilities/
 /nb-configuration.xml
+nbactions.xml
+.*~
