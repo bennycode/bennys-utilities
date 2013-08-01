@@ -43,12 +43,10 @@
           <!-- http://gotofritz.net/blog/geekery/configuration-jasmine-maven-plugin/ -->
           <jsSrcDir>${project.basedir}/src/main/resources/js</jsSrcDir>
           <sourceEncoding>utf-8</sourceEncoding>
-          <!--          
           <sourceIncludes>
-            <include>jquery/jquery-gd-min-1.9.js</include>
-            <include>base.js</include>
+            <include>lib/jquery-1.10.2.min.js</include>
+            <include>bennys-utilities.js</include>
           </sourceIncludes>
-          -->
           <jsTestSrcDir>${project.basedir}/src/test/javascript</jsTestSrcDir>
           <specIncludes>
             <include>*Specs.js</include>

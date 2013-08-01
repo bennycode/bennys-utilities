@@ -1,3 +1,5 @@
+// http://pivotal.github.io/jasmine/
+
 describe('BENNYS.Utilities.test', function() {
 
   it('returns "Hello World"', function() {
@@ -222,4 +224,31 @@ describe('BENNYS.Utilities.CSS.getScaledDimension', function() {
     expect(expected).toBe(JSON.stringify(actual));
   });
 
+});
+
+describe('BENNYS.Utilities.CSS.getCenterProperties', function() {
+
+  it('can calcute the properties needed to center a jQuery element in another jQuery element', function() {
+
+    var outerElement = $('<div id="wrapper" />');
+    outerElement.css({
+      width: '400px',
+      height: '400px',
+      backgroundColor: 'black'
+    });
+
+    var innerElement = $('<div id="enclosed" />');
+    innerElement.css({
+      width: '100px',
+      height: '100px',
+      backgroundColor: 'red'
+    });
+
+    var properties = BENNYS.Utilities.CSS.getCenterProperties(outerElement, innerElement);
+    var actual = JSON.stringify(properties);
+    var expected = '{"top":150,"left":150,"position":"absolute"}';
+
+    expect(actual).toBe(expected);
+  });
+  
 });

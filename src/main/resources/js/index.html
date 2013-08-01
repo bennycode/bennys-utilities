@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="./bennys-utilities.js"></script>
-    </head>
-    <body>
-        <script>
-            var imageWidth = 1024;
-            var imageHeight = 768;
-            var pixelRatio = 2;
-
-            var imageWidth = 1280, imageHeight = 720, designWidth = 1280, designHeight = 720, screenWidth = 1920, screenHeight = 1080;
-            var value = BENNYS.Utilities.CSS.getScaledDimension(imageWidth, imageHeight, designWidth, designHeight, screenWidth, screenHeight);
-            var test1 = JSON.stringify(value);
-            var test2 = '{"width":null,"height":null}';
-
-            console.log(test1);
-
-            if (test1 === test2) {
-                console.log('YES');
-            }
-        </script>
-    </body>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script src="./lib/jquery-1.10.2.min.js"></script>
+    <script src="./bennys-utilities.js"></script>
+    <script src="./main.js"></script>
+  </body>
 </html>

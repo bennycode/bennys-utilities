@@ -93,6 +93,31 @@ BENNYS.Utilities = {
 
 BENNYS.Utilities.CSS = {
   /**
+   * Note: This function works only properly if the wrapper and the
+   * innerElement have been already added/appended to the DOM.
+   * 
+   * @param {type} outerElement Wrapping jQuery element
+   * @param {type} innerElement Encapsulated jQuery element
+   * @returns {object} CSS properties that can be used with $(selector).css(properties)
+   */
+  getCenterProperties: function(outerElement, innerElement) {
+    if (outerElement.width() === 0) {
+
+    }
+
+    alert(outerElement.width());
+    alert(innerElement.width());
+
+    var top = parseInt((outerElement.height() - innerElement.height()) / 2, 10);
+    var left = parseInt((outerElement.width() - innerElement.width()) / 2, 10);
+
+    return {
+      top: top,
+      left: left,
+      position: 'absolute'
+    };
+  },
+  /**
    * 
    * @param {type} imageWidth
    * @param {type} imageHeight
