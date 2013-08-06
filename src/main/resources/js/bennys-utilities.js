@@ -41,6 +41,21 @@ BENNYS.Utilities = {
     return extension;
   },
   /**
+   * Returns the key of an associative array by it's value.
+   * 
+   * @param {type} value
+   * @param {object} object associative array
+   * @returns {string} The key if found.
+   */
+  getKeyByValue: function(value, object) {
+    for (var key in object) {
+      if (object[key] === value) {
+        return key;
+      }
+    }
+    return '';
+  },
+  /**
    * Returns the value (string) of an URL parameter.
    * If the URL parameter is given without any value (ex. index.html?param), then it returns true.
    * If the URL parameter is not given (ex. index.html), then it returns false.

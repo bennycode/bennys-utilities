@@ -1,17 +1,14 @@
 jQuery(document).ready(function($) {
-  var outerElement = $('<div id="wrapper" />');
-  outerElement.css({
-    backgroundColor: 'black'
-  });
+  var languageCodes = {
+    DA: 'Danish',
+    DE: 'German',
+    DZ: 'Bhutani',
+    EL: 'Greek',
+    EN: 'English',
+    EO: 'Esperanto',
+    ES: 'Spanish'
+  };
 
-  var innerElement = $('<div id="enclosed" />');
-  innerElement.css({
-    backgroundColor: 'red'
-  });
-
-  var properties = BENNYS.Utilities.CSS.getCenterProperties(outerElement, innerElement);
-  innerElement.css(properties);
-  var actual = JSON.stringify(properties);
-  // {"top":150,"left":150,"position":"absolute"}
-  console.log(actual);
+  var key = BENNYS.Utilities.getKeyByValue('Greek', languageCodes);
+  console.log(key); // EL
 });

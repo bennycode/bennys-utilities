@@ -10,6 +10,54 @@ describe('BENNYS.Utilities.test', function() {
 
 });
 
+describe('BENNYS.Utilities.getKeyByValue', function() {
+
+  it('works with numbers', function() {
+    var languageCodes = {
+      DA: 1,
+      DE: 2,
+      DZ: 3,
+      EL: 4
+    };
+
+    var actual = BENNYS.Utilities.getKeyByValue(3, languageCodes);
+    var expected = 'DZ';
+
+    expect(actual).toBe(expected);
+  });
+
+  it('works with string values', function() {
+    var languageCodes = {
+      DA: 'Danish',
+      DE: 'German',
+      DZ: 'Bhutani',
+      EL: 'Greek',
+      EN: 'English',
+      EO: 'Esperanto',
+      ES: 'Spanish'
+    };
+
+    var actual = BENNYS.Utilities.getKeyByValue('Greek', languageCodes);
+    var expected = 'EL';
+
+    expect(actual).toBe(expected);
+  });
+
+  it('returns an empty string if nothing has been found', function() {
+
+    var actual = BENNYS.Utilities.getKeyByValue('Greek', {});
+    var expected = false;
+
+    var isFound = false;
+    if (actual) {
+      isFound = true;
+    }
+
+    expect(isFound).toBe(expected);
+  });
+
+});
+
 describe('BENNYS.Utilities.getURLParameter', function() {
 
   it('is true when a parameter is set without a value', function() {
@@ -250,5 +298,5 @@ describe('BENNYS.Utilities.CSS.getCenterProperties', function() {
 
     expect(actual).toBe(expected);
   });
-  
+
 });
