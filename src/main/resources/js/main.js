@@ -1,15 +1,11 @@
 jQuery(document).ready(function($) {
   var outerElement = $('<div id="wrapper" />');
   outerElement.css({
-    width: '400px',
-    height: '400px',
     backgroundColor: 'black'
   });
 
   var innerElement = $('<div id="enclosed" />');
   innerElement.css({
-    width: '100px',
-    height: '100px',
     backgroundColor: 'red'
   });
 

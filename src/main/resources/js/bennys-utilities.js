@@ -101,13 +101,6 @@ BENNYS.Utilities.CSS = {
    * @returns {object} CSS properties that can be used with $(selector).css(properties)
    */
   getCenterProperties: function(outerElement, innerElement) {
-    if (outerElement.width() === 0) {
-
-    }
-
-    alert(outerElement.width());
-    alert(innerElement.width());
-
     var top = parseInt((outerElement.height() - innerElement.height()) / 2, 10);
     var left = parseInt((outerElement.width() - innerElement.width()) / 2, 10);
 
