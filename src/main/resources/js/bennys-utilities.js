@@ -87,6 +87,9 @@ BENNYS.Utilities = {
     var regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g;
     return regex.test(string);
   },
+  isInArray: function(value, array) {
+    return array.indexOf(value) > -1 ? true : false;
+  },
   /**
    * Checks if a browser is a Microsoft Internet Explorer (MSIE).
    * Guaranteed to work with IE8, IE9 and IE10.
