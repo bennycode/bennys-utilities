@@ -313,7 +313,7 @@ describe('BENNYS.Utilities.isEvenNumber', function() {
     var value = BENNYS.Utilities.isEvenNumber(72);
     expect(value).toBe(true);
   });
-  
+
   it('detects uneven numbers', function() {
     var value = BENNYS.Utilities.isEvenNumber(73);
     expect(value).toBe(false);
@@ -326,6 +326,15 @@ describe('BENNYS.Utilities.rgba2hex', function() {
   it('converts purple (Metro UI color)', function() {
     var value = BENNYS.Utilities.rgba2hex(162, 0, 255, 1);
     expect(value).toBe('A200FF');
+  });
+
+});
+
+describe('BENNYS.Utilities.hex2rgba', function() {
+
+  it('converts hex color codes', function() {
+    var value = BENNYS.Utilities.hex2rgba('#A7D136', 50);
+    expect(value).toBe('rgba(167, 209, 54, 0.5)');
   });
 
 });
