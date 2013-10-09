@@ -325,7 +325,7 @@ describe('BENNYS.Utilities.rgba2hex', function() {
 
   it('converts purple (Metro UI color)', function() {
     var value = BENNYS.Utilities.rgba2hex(162, 0, 255, 1);
-    expect(value).toBe('A200FF');
+    expect(value).toBe('#A200FF');
   });
 
 });
