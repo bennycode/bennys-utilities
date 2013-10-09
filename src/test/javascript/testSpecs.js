@@ -323,10 +323,22 @@ describe('BENNYS.Utilities.isEvenNumber', function() {
 
 describe('BENNYS.Utilities.rgba2hex', function() {
 
-  it('converts purple (Metro UI color)', function() {
+  it('converts rgba values', function() {
     var value = BENNYS.Utilities.rgba2hex(162, 0, 255, 1);
     expect(value).toBe('#A200FF');
   });
+
+  it('converts rgba values from a string', function() {
+    var rgba = 'rgba(167, 209, 54, 0.5)';
+    var value = BENNYS.Utilities.rgba2hex(rgba);
+    expect(value).toBe('#A7D136');
+  });
+  
+  it('converts rgb values from a string', function() {
+    var rgba = 'rgb(167, 209, 54)';
+    var value = BENNYS.Utilities.rgba2hex(rgba);
+    expect(value).toBe('#A7D136');
+  });  
 
 });
 

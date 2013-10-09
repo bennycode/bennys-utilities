@@ -121,6 +121,8 @@ BENNYS.Utilities = {
   /**
    * Converts a given r, g, b, a subset into a hex code.
    * 
+   * TODO: Needs some refactoring!!
+   * 
    * @param {number} r red channel (0...255)
    * @param {number} g green channel (0...255)
    * @param {number} b blue channel (0...255)
@@ -130,11 +132,20 @@ BENNYS.Utilities = {
    * @see http://www.w3.org/wiki/CSS/Properties/color/RGBA
    */
   rgba2hex: function(r, g, b, a) {
-    /*
-     if (r > 255 || g > 255 || b > 255 || a > 255)
-     throw "Invalid color component";
-     */
-    var value = (256 + r).toString(16).substr(1) + ((1 << 24) + (g << 16) | (b << 8) | a).toString(16).substr(1);
+    var value = '';
+
+    if (typeof r === 'string') {
+      var array = r.split('(');
+      var valueString = array[1].substr(0, array[1].length - 1);
+      var values = valueString.split(',');
+      r = parseInt(values[0], 10);
+      g = parseInt(values[1], 10);
+      b = parseInt(values[2], 10);
+      a = parseInt('1.0', 10);
+    }
+
+    value = (256 + r).toString(16).substr(1) + ((1 << 24) + (g << 16) | (b << 8) | a).toString(16).substr(1);
+
     return '#' + value.toUpperCase().substr(0, value.length - 2);
   },
   hex2rgba: function(hex, opacity) {
