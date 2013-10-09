@@ -31,11 +31,13 @@ BENNYS.Utilities = {
    * 
    * @param {string} filePath File or file path.
    * @returns {string} File extension (ex. "js" or "css").
+   * @see http://stackoverflow.com/questions/190852/how-can-i-get-file-extensions-with-javascript/
    */
   getFileExtension: function(filePath) {
     var extension = '';
-    if (typeof filePath === 'string') {
-      extension = filePath.substr((~-filePath.lastIndexOf('.') >>> 0) + 2);
+    
+    if (typeof filePath === 'string' && filePath.indexOf('.') > -1) {
+      extension = filePath.split('.').pop();
     }
 
     return extension;

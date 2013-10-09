@@ -154,6 +154,12 @@ describe('BENNYS.Utilities.getFileExtension', function() {
     expect(value).toBe('');
   });
 
+  it('works with .htaccess files', function() {
+    var file = '.htaccess';
+    var value = BENNYS.Utilities.getFileExtension(file);
+    expect(value).toBe('htaccess');
+  });
+
 });
 
 describe('BENNYS.Utilities.isHexColorCode', function() {
