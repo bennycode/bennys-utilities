@@ -332,9 +332,18 @@ describe('BENNYS.Utilities.rgba2hex', function() {
 
 describe('BENNYS.Utilities.hex2rgba', function() {
 
-  it('converts hex color codes', function() {
+  it('converts hex color codes with a given alpha transparency', function() {
     var value = BENNYS.Utilities.hex2rgba('#A7D136', 50);
     expect(value).toBe('rgba(167, 209, 54, 0.5)');
+  });
+
+});
+
+describe('BENNYS.Utilities.hex2rgba', function() {
+
+  it('converts hex color codes without a given alpha transparency', function() {
+    var value = BENNYS.Utilities.hex2rgba('#A7D136');
+    expect(value).toBe('rgba(167, 209, 54, 1.0)');
   });
 
 });

@@ -143,8 +143,9 @@ BENNYS.Utilities = {
     var r = parseInt(hex.substring(0, 2), 16);
     var g = parseInt(hex.substring(2, 4), 16);
     var b = parseInt(hex.substring(4, 6), 16);
+    var a = (typeof opacity === 'number') ? opacity / 100 : '1.0';
 
-    return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + opacity / 100 + ')';
+    return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + a + ')';
   }
 
 };
