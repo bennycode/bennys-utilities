@@ -306,3 +306,17 @@ describe('BENNYS.Utilities.CSS.getCenterProperties', function() {
   });
 
 });
+
+describe('BENNYS.Utilities.isEvenNumber', function() {
+
+  it('detects even numbers', function() {
+    var value = BENNYS.Utilities.isEvenNumber(72);
+    expect(value).toBe(true);
+  });
+  
+  it('detects uneven numbers', function() {
+    var value = BENNYS.Utilities.isEvenNumber(73);
+    expect(value).toBe(false);
+  });
+
+});

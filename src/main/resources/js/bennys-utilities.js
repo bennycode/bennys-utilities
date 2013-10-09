@@ -35,7 +35,7 @@ BENNYS.Utilities = {
    */
   getFileExtension: function(filePath) {
     var extension = '';
-    
+
     if (typeof filePath === 'string' && filePath.indexOf('.') > -1) {
       extension = filePath.split('.').pop();
     }
@@ -80,7 +80,16 @@ BENNYS.Utilities = {
     return value;
   },
   /**
-   * Checks if a color is valid (ex. #00FF00).
+   * Returns true if a number is even.
+   * 
+   * @param {number} number
+   * @returns {boolean}
+   */
+  isEvenNumber: function(number) {
+    return (number % 2 === 0) ? true : false;
+  },
+  /**
+   * Checks if a color is a valid hex code (ex. #00FF00).
    * 
    * @param {type} string Color code
    * @returns {boolean} Information whether it is a valid hex code or not.
