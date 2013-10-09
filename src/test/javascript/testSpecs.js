@@ -157,7 +157,7 @@ describe('BENNYS.Utilities.getFileExtension', function() {
   it('works with .htaccess files', function() {
     var file = '.htaccess';
     var value = BENNYS.Utilities.getFileExtension(file);
-    expect(value).toBe('htaccess');
+    expect(value).toBe('');
   });
 
 });
