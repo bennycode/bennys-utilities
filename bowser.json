@@ -1,0 +1,14 @@
+{
+  "name": "bennys-utilities",
+  "main": "bennys-utilities.js",
+  "licence": "MIT",
+  "ignore": [
+    "src",
+    ".gitignore",
+    "pom.xml",
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bennyn/bennys-utilities.git"
+  }
+}
