@@ -5,7 +5,7 @@
   "ignore": [
     "src",
     ".gitignore",
-    "pom.xml",
+    "pom.xml"
   ],
   "repository": {
     "type": "git",
